@@ -1,5 +1,6 @@
 ---
-published: true
+layout: post
+title: 敏捷开发实践感悟
 ---
 
 
