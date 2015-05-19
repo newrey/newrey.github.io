@@ -1,6 +1,7 @@
 ---
-published: false
+published: true
 ---
+
 
 ## 敏捷开发实践感悟
 
