@@ -1,3 +1,9 @@
+---
+layout: post
+title: Spring.io 源码架构分析
+published: true
+---
+
 本文抛砖引玉，主要解决以下问题
 
 ### 求推荐几个SSH或者springMVC的实例项目源码
