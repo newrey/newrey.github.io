@@ -7,3 +7,5 @@ Gemfile
 Gemfile.lock
 node_modules
 package.json
+_posts/.idea
+_posts/_posts.iml
