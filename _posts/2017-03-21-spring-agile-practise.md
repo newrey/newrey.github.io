@@ -4,7 +4,7 @@ title: Spring.io 源码架构分析
 published: true
 ---
 
-本文抛砖引玉，主要解决以下问题
+针对spring.io背后的架构原理，抛砖引玉，主要解决以下问题
 
 ### 求推荐几个SSH或者springMVC的实例项目源码
 
@@ -24,7 +24,7 @@ git clone https://github.com/spring-io/sagan.git
 cd sagan
 gradlew bootRun
 ```
-Spring Boot带着项目飞：[Spring Boot详情](http://projects.spring.io/spring-boot/ "Spring Boot详情") ，我还是会给Spring Boot打广告
+Spring Boot带着项目飞：[Spring Boot详情](http://projects.spring.io/spring-boot/ "Spring Boot详情") 
 
 
 ## 项目目录结构
@@ -44,7 +44,7 @@ Spring Boot带着项目飞：[Spring Boot详情](http://projects.spring.io/sprin
 通过settings.gradle可以看出，四个核心模块 'sagan-common', 'sagan-site', 'sagan-indexer', 'sagan-client'
 
 ## 为什么这么分？
-我分析出的原因：
+分析出的原因：
 1. 解耦模块，便于协作。
 _使程序员关注1-2个文件夹，随着项目进展，甚至无需检出/编译/运行 不相干模块；以单元测试用例，接口做交付。_
 
