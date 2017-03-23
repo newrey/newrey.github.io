@@ -16,7 +16,7 @@ published: true
 
 - 主角：[sagan](https://github.com/spring-io/sagan "sagan")
 - 描述：spring.io 开源项目，即Spring官方网站的项目,其代表了业界的较高水准。不论是初学者还是在ssh/ssi架构下耕作的工程师，都可以从中受益。
-- 关键词：Spring MVC, hibernate, spring data jpa, Jade, AOP, Gradle
+- 关键词：Spring MVC, hibernate, spring data jpa, AOP, Gradle
 
 ## 源码本地启动
 ```
