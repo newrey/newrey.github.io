@@ -4,18 +4,18 @@ title: Spring.io 源码架构分析
 published: true
 ---
 
-针对spring.io背后的架构原理，抛砖引玉，主要解决以下问题
-
-### 求推荐几个SSH或者springMVC的实例项目源码
+先抛出几个标题，
 
 ### 谁有关于SpringMvc 比较不错的项目
 
+### 求推荐几个SSH或者pringMVC的实例项目源码
+
 ### 如何具备模块设计架构能力，独立完成模块设计和实现
 
-文章不追求高大上，用朴实描述将你实际开发中的问题一一拎清。
+这些困扰的问题，在本文已有了答案。以下将针对spring.io背后的架构原理，抛砖引玉，力争以朴实描述将实际开发中的问题一一拎清。
 
 - 主角：[sagan](https://github.com/spring-io/sagan "sagan")
-- 描述：spring.io 开源项目，即Spring官方网站的项目,其代表了业界的较高水准。不论是初学者还是在ssh/ssi架构下耕作的工程师，都可以从中受益。
+- 描述：[spring.io](https://spring.io "spring官网") 开源项目，即Spring官方网站的项目,其代表了业界的较高水准。不论是初学者还是在ssh/ssi架构下耕作的工程师，都可以从中受益。
 - 关键词：Spring MVC, hibernate, spring data jpa, AOP, Gradle
 
 ## 源码本地启动
@@ -24,7 +24,7 @@ git clone https://github.com/spring-io/sagan.git
 cd sagan
 gradlew bootRun
 ```
-Spring Boot带着项目飞：[Spring Boot详情](http://projects.spring.io/spring-boot/ "Spring Boot详情") 
+_项目能快速启动关键：[Spring Boot](http://projects.spring.io/spring-boot/ "Spring Boot详情")_ 
 
 
 ## 项目目录结构
@@ -41,14 +41,18 @@ Spring Boot带着项目飞：[Spring Boot详情](http://projects.spring.io/sprin
 |-- wiki 项目wiki页，git子模块
 ```
 
-通过settings.gradle可以看出，四个核心模块 'sagan-common', 'sagan-site', 'sagan-indexer', 'sagan-client'
+通过settings.gradle可以看出，
+
+四个核心模块 'sagan-common', 'sagan-site', 'sagan-indexer', 'sagan-client'
 
 ## 为什么这么分？
 分析出的原因：
 1. 解耦模块，便于协作。
+
 _使程序员关注1-2个文件夹，随着项目进展，甚至无需检出/编译/运行 不相干模块；以单元测试用例，接口做交付。_
 
 2. 便于部署和分布式集群。
+
 _client可部署cdn，也可构建时拷贝到site;common+indexer做单点部署，独立于site，以避免多点部署的重复任务；common+site做分布式部署，处理并发请求业务，做负载均衡更自由；数据仓库、搜索引擎独立部署，也可使用云托管。_
 
 
@@ -57,19 +61,26 @@ _client可部署cdn，也可构建时拷贝到site;common+indexer做单点部署
 - 纯JAVA，业务数据结构定义，数据库关系映射，Bean。MVC中的Module
 
 包含业务功能模块：
+[blog](http://spring.io/blog "sprio.io blog module") [guides](http://spring.io/guides "sprio.io guides module") [projects](http://spring.io/projects "sprio.io projects module")
 ```
 .
-|-- blog  [blog](http://spring.io/blog "sprio.io blog module")  文件夹下主要是定义
-|   |-- support 该子目录偏重业务逻辑
-|-- guides [guides](http://spring.io/guides "sprio.io guides module")
-|-- projects [projects](http://spring.io/projects "sprio.io projects module")
+|-- blog    文件夹下主要是定义
+|   |-- support 偏重业务逻辑
+|-- guides 
+|-- projects 
 |-- serach 搜索功能
 |-- support 
 
 ```
-- Post/PostCategory/PostFormat数据字段：使用了数据绑定机制进行有效性验证，如@NotEmpty  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
-- 相关Service：BlogService、MarkDown相关处理Service:从Interface定义到实现implements类...以@Service 标记，Service之间存在互相引用关系。
-- JPA：PostRepository 持久化应用Spring Data 封装方案
+- Post/PostCategory/PostFormat数据字段：
+
+使用了数据绑定机制进行有效性验证，如@NotEmpty  @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
+- 相关Service：BlogService、MarkDown相关处理Service:
+
+从Interface定义到实现implements类...以@Service 标记，Service之间存在互相引用关系。
+- JPA：
+
+PostRepository 持久化应用Spring Data 封装方案
 
 按业务功能划分与按层划分对比：
 ```
@@ -129,3 +140,6 @@ Elasticsearch 和数据处理任务
 进一步对项目研究，除了优秀的模块结构划分，细节上的深度处理，足够全面的测试用例，开发运维的全盘考虑，是该项目优秀的关键点。
 
 技术标杆已立于此，实际操作中，工作量与开发团队可利用资源的矛盾、技术点的优先级，何时推动？3个人的团队该怎么去做、30人的团队该怎么去做项目，是考验架构师/项目经理的所在。
+
+
+出处：http://newrey.com/spring-agile-practise/
