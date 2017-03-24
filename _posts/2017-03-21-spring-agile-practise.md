@@ -14,6 +14,7 @@ published: true
 
 这些困扰的问题，在本文已有了答案。以下将针对spring.io背后的架构原理，抛砖引玉，力争以朴实描述将实际开发中的问题一一拎清。
 
+## 关键
 - 主角：[sagan](https://github.com/spring-io/sagan "sagan")
 - 描述：[spring.io](https://spring.io "spring官网") 开源项目，即Spring官方网站的项目,其代表了业界的较高水准。不论是初学者还是在ssh/ssi架构下耕作的工程师，都可以从中受益。
 - 关键词：Spring MVC, hibernate, spring data jpa, AOP, Gradle
@@ -24,7 +25,9 @@ git clone https://github.com/spring-io/sagan.git
 cd sagan
 gradlew bootRun
 ```
-_项目能快速启动关键：[Spring Boot](http://projects.spring.io/spring-boot/ "Spring Boot详情")_ 
+浏览器访问： http://localhost:8080 
+
+_项目能快速启动原因：[Spring Boot](http://projects.spring.io/spring-boot/ "Spring Boot详情")_ 
 
 
 ## 项目目录结构
@@ -47,13 +50,13 @@ _项目能快速启动关键：[Spring Boot](http://projects.spring.io/spring-bo
 
 ## 为什么这么分？
 分析出的原因：
-1. 解耦模块，便于协作。
+- 解耦模块，便于协作
 
-_使程序员关注1-2个文件夹，随着项目进展，甚至无需检出/编译/运行 不相干模块；以单元测试用例，接口做交付。_
+使程序员关注1-2个文件夹，随着项目进展，甚至无需检出/编译/运行 不相干模块；以单元测试用例，接口做交付。
 
-2. 便于部署和分布式集群。
+- 便于部署和分布式集群
 
-_client可部署cdn，也可构建时拷贝到site;common+indexer做单点部署，独立于site，以避免多点部署的重复任务；common+site做分布式部署，处理并发请求业务，做负载均衡更自由；数据仓库、搜索引擎独立部署，也可使用云托管。_
+client可部署cdn，也可构建时拷贝到site;common+indexer做单点部署，独立于site，以避免多点部署的重复任务；common+site做分布式部署，处理并发请求业务，做负载均衡更自由；数据仓库、搜索引擎独立部署，也可使用云托管。
 
 
 ## sagan-common
