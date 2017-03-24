@@ -145,4 +145,4 @@ Elasticsearch 和数据处理任务
 技术标杆已立于此，实际操作中，工作量与开发团队可利用资源的矛盾、技术点的优先级，何时推动？3个人的团队该怎么去做、30人的团队该怎么去做项目，是考验架构师/项目经理的所在。
 
 
-出处：http://newrey.com/spring-agile-practise/
+出处：[http://newrey.com/spring-agile-practise/](http://newrey.com/spring-agile-practise/)
