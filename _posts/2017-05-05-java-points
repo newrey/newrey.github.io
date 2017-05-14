@@ -1,0 +1,27 @@
+---
+layout: post
+title: untitle
+published: false
+---
+#接口和抽象类区别？
+1.语法层次
+2.设计层次
+接口是自顶向下的设计，抽象类是自底向上的抽象。
+接口是对行为的抽象，抽象类是对整个类（除了行为之外的属性、逻辑）的抽象。
+3.使用领域
+抽象类用于is-a
+接口用于like-a
+
+#java中的代理机制，AOP实现方式
+cglib动态代理:MethodInterceptor
+jdk动态代理:InvocationHandler
+
+#多线程 锁
+1.Runnable\Thread
+2.ExecutorService、Callable、Future、concurrent
+3.synchronized\Lock\volatile
+
+#volatile 轻量同步：有可见性、不具备原子性
+
+高效并发
+阻塞

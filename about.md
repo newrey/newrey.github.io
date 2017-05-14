@@ -6,4 +6,4 @@ permalink: /about/
 
 ### Contact me
 
-mail(at)newrey.com ( (at) should replaced by @)
+mail(at)newrey.com [(at) should replaced by @]
