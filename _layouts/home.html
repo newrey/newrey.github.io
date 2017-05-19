@@ -77,7 +77,11 @@
         <div id="wrapper">
             <h1>New Rey</h1>
             <h2>{{ site.description }}</h2>
-            <p></p>
+            <p>
+            <nav>
+                <a href="{{ site.baseurl }}/blog/">blog</a> | <a href="{{ site.baseurl }}/about/">about</a>
+            </nav>
+            </p>
         </div>
         <canvas></canvas>
         <script>
@@ -124,7 +128,7 @@
                 return (t>h||t<0) ? y(p) : t
             }
             document.onclick = i
-            document.ontouchstart = i
+            // document.ontouchstart = i
             i()
         </script>
         {% include analytics.html %}
