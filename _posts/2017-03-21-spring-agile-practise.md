@@ -13,7 +13,7 @@ published: true
 ### 如何具备模块设计架构能力，独立完成模块设计和实现
 
 这些困扰的问题，在本文已有了答案。以下将针对spring.io背后的架构原理，抛砖引玉，力争以朴实描述将实际开发中的问题一一拎清。
-
+<!--more-->
 ## 关键
 - 主角：[sagan](https://github.com/spring-io/sagan "sagan")
 - 描述：[spring.io](https://spring.io "spring官网") 开源项目，即Spring官方网站的项目,其代表了业界的较高水准。不论是初学者还是在ssh/ssi架构下耕作的工程师，都可以从中受益。
